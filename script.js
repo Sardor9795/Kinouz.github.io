@@ -1,3 +1,4 @@
+// === Particle fon avvalgi kod (o‘sha-o‘sha) ===
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -42,3 +43,18 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
   initParticles();
 });
+
+// === KINOLAR RO‘YXATINI YUKLASH ===
+fetch('movies.json')
+  .then(response => response.json())
+  .then(movies => {
+    const moviesDiv = document.querySelector('.movies');
+    moviesDiv.innerHTML = movies.map(movie => `
+      <div class="movie-card">
+        <img src="${movie.poster}" alt="${movie.title}">
+        <h3>${movie.title}</h3>
+        <p>${movie.year}</p>
+      </div>
+    `).join('');
+  })
+  .catch(err => console.error("Kino ro'yxatini yuklashda xatolik:", err));
