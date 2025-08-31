@@ -1,70 +1,163 @@
-# This workflow will upload a Python Package to PyPI when a release is created
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
+<!--
+HdKinoBox.uz — Starter single-file HTML template
+Instructions:
+1) Save this as index.html and replace placeholder images/text.
+2) To deploy quickly: push to GitHub and use GitHub Pages / Netlify / Vercel.
+3) Replace YouTube IDs for trailers, and add your own API/backend for dynamic content.
+4) IMPORTANT: do NOT host or link to copyrighted full movies without permission. Use trailers, reviews, subtitles, news, and public-domain films.
+-->
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HdKinoBox — Kinolar, treylerlar, sharhlar</title>
+  <meta name="description" content="HdKinoBox — yangi va mashhur kinolar, treylerlar va qisqacha sharhlar. Faqat qonuniy treylerlar va tavsiyalar.">
+  <!-- Tailwind via CDN for quick prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-bold text-indigo-600">HdKinoBox</a>
+      <nav class="space-x-4 text-sm">
+        <a href="#" class="hover:underline">Bosh sahifa</a>
+        <a href="#new" class="hover:underline">Yangi</a>
+        <a href="#genres" class="hover:underline">Janrlar</a>
+        <a href="#contact" class="hover:underline">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-name: Upload Python Package
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl p-8 text-white shadow-lg">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-extrabold">HdKinoBox.uz — Kinolar uchun tezkor sahifa</h1>
+            <p class="mt-2 opacity-90">Treylerlar, qisqacha sharhlar va kinolar ro‘yxati. Yangi kinolarni kuzatib boring.</p>
+            <div class="mt-4">
+              <a href="#movies" class="inline-block bg-white text-indigo-600 font-semibold px-4 py-2 rounded-lg shadow">Film ro‘yxati</a>
+            </div>
+          </div>
+          <div class="mt-6 md:mt-0">
+            <!-- Placeholder poster -->
+            <img src="https://via.placeholder.com/260x360?text=HdKinoBox" alt="poster" class="rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
 
-on:
-  release:
-    types: [published]
+    <section id="search" class="mb-6">
+      <label class="block text-sm font-medium mb-2">Kino yoki kalit so‘z qidiring</label>
+      <div class="flex gap-2">
+        <input id="q" type="search" placeholder="masalan: Interstellar" class="flex-1 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-300">
+        <button id="searchBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Qidirish</button>
+      </div>
+    </section>
 
-permissions:
-  contents: read
+    <section id="movies">
+      <h2 class="text-2xl font-bold mb-4">Yangi va mashhur kinolar</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <!-- Movie card (duplicate for real items or render dynamically) -->
+        <article class="bg-white rounded-lg overflow-hidden shadow">
+          <img src="https://via.placeholder.com/400x600?text=Movie+1" alt="Movie 1" class="w-full h-56 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold">Film nomi 1</h3>
+            <p class="text-sm text-gray-600 mt-1">Janr · 2024</p>
+            <div class="mt-3 flex items-center justify-between">
+              <button data-youtube="dQw4w9WgXcQ" class="playBtn px-3 py-1 bg-indigo-600 text-white rounded">Treyler</button>
+              <a href="#" class="text-sm underline">Batafsil</a>
+            </div>
+          </div>
+        </article>
 
-jobs:
-  release-build:
-    runs-on: ubuntu-latest
+        <article class="bg-white rounded-lg overflow-hidden shadow">
+          <img src="https://via.placeholder.com/400x600?text=Movie+2" alt="Movie 2" class="w-full h-56 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold">Film nomi 2</h3>
+            <p class="text-sm text-gray-600 mt-1">Janr · 2023</p>
+            <div class="mt-3 flex items-center justify-between">
+              <button data-youtube="dQw4w9WgXcQ" class="playBtn px-3 py-1 bg-indigo-600 text-white rounded">Treyler</button>
+              <a href="#" class="text-sm underline">Batafsil</a>
+            </div>
+          </div>
+        </article>
 
-    steps:
-      - uses: actions/checkout@v4
+        <!-- Add more cards as needed -->
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
+      </div>
+    </section>
 
-      - name: Build release distributions
-        run: |
-          # NOTE: put your own distribution build steps here.
-          python -m pip install build
-          python -m build
+    <section id="genres" class="mt-10">
+      <h2 class="text-xl font-bold mb-3">Janrlar</h2>
+      <div class="flex flex-wrap gap-2">
+        <a class="px-3 py-1 bg-white rounded shadow" href="#">Drama</a>
+        <a class="px-3 py-1 bg-white rounded shadow" href="#">Komedya</a>
+        <a class="px-3 py-1 bg-white rounded shadow" href="#">Horror</a>
+        <a class="px-3 py-1 bg-white rounded shadow" href="#">Action</a>
+      </div>
+    </section>
 
-      - name: Upload distributions
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-dists
-          path: dist/
+    <section id="contact" class="mt-12 mb-16">
+      <h2 class="text-xl font-bold mb-3">Kontakt</h2>
+      <p class="text-sm text-gray-600">Bot va yangiliklar uchun Telegram: <a href="#" class="underline">@HdKinoBox</a></p>
+    </section>
+  </main>
 
-  pypi-publish:
-    runs-on: ubuntu-latest
-    needs:
-      - release-build
-    permissions:
-      # IMPORTANT: this permission is mandatory for trusted publishing
-      id-token: write
+  <footer class="bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600">
+      <div class="flex flex-col md:flex-row md:justify-between">
+        <div>© HdKinoBox.uz — {year}</div>
+        <div class="mt-3 md:mt-0">Treylerlar uchun YouTube iframe va qonuniy manbalar ishlatiladi.</div>
+      </div>
+    </div>
+  </footer>
 
-    # Dedicated environments with protections for publishing are strongly recommended.
-    # For more information, see: https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#deployment-protection-rules
-    environment:
-      name: pypi
-      # OPTIONAL: uncomment and update to include your PyPI project URL in the deployment status:
-      # url: https://pypi.org/p/YOURPROJECT
-      #
-      # ALTERNATIVE: if your GitHub Release name is the PyPI project version string
-      # ALTERNATIVE: exactly, uncomment the following line instead:
-      # url: https://pypi.org/project/YOURPROJECT/${{ github.event.release.name }}
+  <!-- Simple JS: search, play trailer modal -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-60">
+    <div class="bg-white rounded-lg overflow-hidden max-w-3xl w-full">
+      <div class="p-2 text-right"><button id="closeModal" class="px-3 py-1">Yopish</button></div>
+      <div id="modalBody" class="p-2">
+        <!-- YouTube iframe will be injected here -->
+      </div>
+    </div>
+  </div>
 
-    steps:
-      - name: Retrieve release distributions
-        uses: actions/download-artifact@v4
-        with:
-          name: release-dists
-          path: dist/
+  <script>
+    // replace {year}
+    document.querySelector('footer').innerHTML = document.querySelector('footer').innerHTML.replace('{year}', new Date().getFullYear());
 
-      - name: Publish release distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          packages-dir: dist/
+    // play trailer buttons
+    document.querySelectorAll('.playBtn').forEach(b => {
+      b.addEventListener('click', () => {
+        const id = b.getAttribute('data-youtube');
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+        iframe.width = '100%';
+        iframe.height = '480';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        const body = document.getElementById('modalBody');
+        body.innerHTML = '';
+        body.appendChild(iframe);
+        document.getElementById('modal').classList.remove('hidden');
+      })
+    })
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('modalBody').innerHTML = '';
+      document.getElementById('modal').classList.add('hidden');
+    });
+
+    // very simple search (client-side filtering)
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      const q = document.getElementById('q').value.toLowerCase();
+      document.querySelectorAll('#movies article').forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        card.style.display = title.includes(q) ? '' : 'none';
+      })
+    })
+  </script>
+</body>
+</html>
