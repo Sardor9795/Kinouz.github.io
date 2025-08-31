@@ -44,17 +44,38 @@ window.addEventListener("resize", () => {
   initParticles();
 });
 
-// === KINOLAR RO‘YXATINI YUKLASH ===
+// === KINOLAR RO‘YXATINI YUKLASH VA FILTRLASH ===
+let allMovies = [];
+
 fetch('movies.json')
   .then(response => response.json())
   .then(movies => {
-    const moviesDiv = document.querySelector('.movies');
-    moviesDiv.innerHTML = movies.map(movie => `
-      <div class="movie-card">
-        <img src="${movie.poster}" alt="${movie.title}">
-        <h3>${movie.title}</h3>
-        <p>${movie.year}</p>
-      </div>
-    `).join('');
+    allMovies = movies;
+    renderMovies(movies);
   })
   .catch(err => console.error("Kino ro'yxatini yuklashda xatolik:", err));
+
+function renderMovies(movies) {
+  const moviesDiv = document.querySelector('.movies');
+  if (movies.length === 0) {
+    moviesDiv.innerHTML = "<p>Kino topilmadi 😢</p>";
+    return;
+  }
+  moviesDiv.innerHTML = movies.map(movie => `
+    <div class="movie-card">
+      <img src="${movie.poster}" alt="${movie.title}">
+      <h3>${movie.title}</h3>
+      <p>${movie.year}</p>
+    </div>
+  `).join('');
+}
+
+// === Qidiruv oynasi orqali filtr ===
+const searchBox = document.querySelector('.search-box');
+searchBox.addEventListener('input', e => {
+  const query = e.target.value.toLowerCase();
+  const filtered = allMovies.filter(m =>
+    m.title.toLowerCase().includes(query)
+  );
+  renderMovies(filtered);
+});
