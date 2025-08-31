@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HD Kino Box</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDKinoBox</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>HD Kino Box</h1>
-        <p>Sevimli kinolaringizni qidirib toping va tomosha qiling!</p>
-    </header>
-    <main>
-        <input type="text" id="searchBox" placeholder="Film nomini kiriting...">
-        <button onclick="searchMovie()">Qidirish</button>
-        <div id="results"></div>
-    </main>
-    <script src="script.js"></script>
+  <div id="particles-js"></div>
+  <header>
+    <img src="img/logo.svg" alt="HDKinoBox Logo" class="logo">
+    <input type="text" id="search" placeholder="Kinolarni qidiring...">
+  </header>
+  <main>
+    <h1>Eng yangi kinolar</h1>
+    <div id="movie-list"></div>
+  </main>
+  <footer>
+    <p>Bizni kuzating: 
+      <a href="https://t.me/yourchannel" target="_blank">Telegram</a> | 
+      <a href="https://instagram.com/yourpage" target="_blank">Instagram</a>
+    </p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
