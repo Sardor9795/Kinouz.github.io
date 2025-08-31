@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Avatar 2",
+    "year": 2022,
+    "poster": "img/avatar2.jpg"
+  },
+  {
+    "title": "Oppenheimer",
+    "year": 2023,
+    "poster": "img/oppenheimer.jpg"
+  },
+  {
+    "title": "Fast X",
+    "year": 2023,
+    "poster": "img/fastx.jpg"
+  }
+]
