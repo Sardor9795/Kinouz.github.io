@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="particles-js"></div>
   <header>
-    <img src="img/logo.svg" alt="HDKinoBox Logo" class="logo">
-    <input type="text" id="search" placeholder="Kinolarni qidiring...">
+    <img src="img/logo.png" alt="HDKinoBox Logo" class="logo">
+    <input type="text" placeholder="Kinolarni qidiring..." class="search-box">
   </header>
+
   <main>
     <h1>Eng yangi kinolar</h1>
-    <div id="movie-list"></div>
+    <div class="movies">
+      <!-- Bu yerga kinolar qo'shiladi -->
+    </div>
   </main>
+
   <footer>
-    <p>Bizni kuzating: 
-      <a href="https://t.me/yourchannel" target="_blank">Telegram</a> | 
-      <a href="https://instagram.com/yourpage" target="_blank">Instagram</a>
-    </p>
+    Bizni kuzating: 
+    <a href="https://t.me/kanal_nomi" target="_blank">Telegram</a> | 
+    <a href="https://instagram.com/profil_nomi" target="_blank">Instagram</a>
   </footer>
+
+  <canvas id="particles"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
