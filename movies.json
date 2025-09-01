@@ -1,5 +1,9 @@
 [
-  { "title": "Avatar 2", "year": 2022, "poster": "img/avatar2.jpg" },
+  {
+  "title": "Avatar 2",
+  "year": 2022,
+  "poster": "https://behance.net/…/avatar2_poster.jpg"
+  }
   { "title": "Oppenheimer", "year": 2023, "poster": "img/oppenheimer.jpg" },
   { "title": "Fast X", "year": 2023, "poster": "img/fastx.jpg" },
   { "title": "John Wick 4", "year": 2023, "poster": "img/johnwick4.jpg" },
